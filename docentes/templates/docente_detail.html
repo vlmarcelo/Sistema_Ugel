@@ -1,0 +1,198 @@
+{% extends 'detail.html' %}
+{% load static from staticfiles %}
+
+{% block title %} 
+	Detail - Docente
+{% endblock %}
+<!-- Header -->
+
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	{% url 'menu:main' %}
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Main
+{% endblock titulo_menu%}
+
+{% block avatar_sistema %}
+	{% static "imagenes/png/Gorra-1.png" %}
+{% endblock avatar_sistema %}
+
+{% block avatar_modulo %}
+	{% static "imagenes/png/Profesor-1.png" %}
+{% endblock avatar_modulo %}
+
+
+<!-- DetailHead - Rotulo -->
+{% block rotulo_detail %}
+	Detalle de Docente
+{% endblock rotulo_detail %}
+
+<!-- DetailHead - ID -->
+{% block id %}
+	id : {{object.id}}
+{% endblock id%}
+
+<!-- DetailBody - Imagen -->
+{% block imagen_detail %}
+	<img src="{{object.fotografia.url}}" alt="{{object.nombre}}" class="DetailImagen"/>
+{% endblock imagen_detail %}
+
+
+<!-- DetailBody - URL -->
+{% block url_update %} 
+	{% url 'docente:update' object.id %}
+{% endblock url_update %}
+
+<!-- DetailBody - Descripcion -->
+{% block imagen_descripcion_detail %}
+	{{object.nombre}}
+{% endblock imagen_descripcion_detail%}
+
+{% block atributos %}
+	<ul class="Atributos">
+		{% if object.imagen %}
+	
+		{% else %}
+			<li class="AtributoItem">
+				<p class="Atributo Font-Size-P">
+					<span class="Etiqueta Fondo-Celeste">
+						id:	
+					</span>
+
+					<span class="Value">
+						{{object.id}}
+					</span>
+				</p>
+			</li>
+		{% endif %}
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Apellido Paterno:	
+				</span>
+
+				<span class="Value">
+					{{object.apellido_paterno}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Apellido Materno:	
+				</span>
+
+				<span class="Value">
+					{{object.apellido_materno}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Nombre:	
+				</span>
+
+				<span class="Value">
+					{{object.nombre}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					D.N.I.:	
+				</span>
+
+				<span class="Value">
+					{{object.numero_documento_identificacion}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Fecha Nacimiento:
+				</span>
+
+				<span class="Value">
+					{{object.fecha_nacimiento|date:"d/m/Y"}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Tipo Docente
+				</span>
+
+				<span class="Value">
+					{{object.tipo_docente}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Cargo
+				</span>
+
+				<span class="Value">
+					{{object.cargo}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Grado Instrucción
+				</span>
+
+				<span class="Value">
+					{{object.grado_instruccion}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Profesión
+				</span>
+
+				<span class="Value">
+					{{object.profesion}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Idioma
+				</span>
+
+				<span class="Value">
+					{{object.idioma}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Fecha Registro:
+				</span>
+
+				<span class="Value">
+					{{object.fecha_registro|date:"d/m/Y h:m:s"}}
+				</span>
+			</p>
+		</li>
+	</ul>
+{% endblock atributos%}
+

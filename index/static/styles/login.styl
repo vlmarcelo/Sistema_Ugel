@@ -1,0 +1,128 @@
+amarillo_claro = #ffe788
+azul = #225aa4
+azul_acero = #1e6381
+azul_oscuro = #273b47
+celeste = #298fb7
+celeste_claro = #23a2dc
+celeste_agua = #c2e1f5
+gris = #FAFAFA
+gris_oscuro = #333636
+naranja = #DD4F24
+transparente = rgba(255, 255, 255, 0.5)
+turqueza = #1bd6e0
+verde_agua = #cdf1e2
+verde_claro = #80BCA3
+verde_oscuro = #35656d
+verde_negro = #033333
+rojo = #ff4842
+
+section 
+	.LoginMarco 
+		background url(../imagenes/jpg/Fondo-Azul-1.jpg)
+		background-size cover
+		background-position center
+		background-repeat no-repeat
+		height 80vh 
+		width 100%
+		display flex 
+		justify-content center 
+		align-items center 
+		flex-direction column
+		.Login 
+			box-shadow 0 0 10px white
+			background rgba(black, .3)
+			border-radius .5em
+			width 310px
+			border 1px solid black  
+			overflow hidden
+			&-Body 
+				height 85%
+				width 100%
+				.LoginForm
+					height 100%
+					width 100%
+					display flex
+					justify-content center 
+					align-items center
+					flex-direction column
+					.Marco 
+						display flex 
+						justify-content center 
+						align-items center 
+						flex-direction column
+						.Box
+							padding 0
+							display flex 
+							justify-content center 
+							align-items center
+							margin 0.5em 0
+							flex-direction column
+							//Estos campor aperecen cuando se da el error del formulario es por defecto en django.
+							transition .3s
+							>label 
+								display none
+							>ul 
+								>li 
+									text-shadow 1px 1px 3px black
+									font-size .7em	
+									font-weight bolder 
+									color white
+							&-InputSubmit
+								background amarillo_claro
+								border 1px solid black
+								border-radius .5em
+								color white 
+								font-weight bolder
+								height 35px
+								line-height 32px
+								margin 0 
+								outline 0
+								padding 0
+								text-shadow 1px 1px 10px black
+								transition .3s
+								width 180px
+								&:hover 
+									background rgba(red, .3)
+									text-shadow 1px 1px 10px amarillo_claro
+									
+								
+							&-Link 
+								font-weight bolder
+								color red
+								transition .3s
+								&:hover 
+									text-decoration underline
+						.MensajeError
+							width 85%
+							.TextError 
+								text-shadow 1px 1px 3px black
+								font-size .7em
+								color white
+								font-weight bolder 
+								text-align justify
+			&-Head 
+				height 15%
+				width 100%
+				border-bottom 1px solid black
+				.Titulo
+					line-height 38px
+					color white
+					font-size 1.1em
+					font-weight bolder
+					text-align center 
+					text-shadow 1px 1px 10px black
+
+@media screen and (min-width:480px)
+	section
+		.LoginMarco 
+			 height 76vh
+			.Login 
+				margin .5em 0
+				
+				
+@media screen and (min-width:1000px)
+	section
+		.LoginMarco 
+			height 70vh
+			
+			

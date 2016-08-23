@@ -1,0 +1,710 @@
+{% extends 'base_menu_nav.html' %}
+{% load static from staticfiles %}
+
+{% block title %} 
+	Incripción - Docente
+{% endblock %}
+
+<!-- Header -->
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	{% url 'menu:main' %}
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Main
+{% endblock titulo_menu%}
+
+{% block avatar_sistema %}
+	{% static "imagenes/png/Gorra-1.png" %}
+{% endblock avatar_sistema %}
+
+{% block avatar_modulo %}
+	{% static "imagenes/png/Profesor-1.png" %}
+{% endblock avatar_modulo %}
+
+{% block section%}
+<article class="ContainerForm">
+	<!-- Titulo -->
+	<div class="RotuloContainer Border-Bottom-Rojo">
+		<h3 class="Rotulo ">
+			Datos | Docente
+		</h3>
+	</div>
+	<!-- Formulario -->
+	<form action="" id="form_administrado_create" method="post" enctype="multipart/form-data" class="Form">
+		{% csrf_token %}
+		<!-- Usuario -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.usuario.auto_id }}" class="Label">
+					{{form.usuario.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.usuario}}
+					{{form.usuario.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Datos: Representante Legal -->
+		<div class="Border-Bottom-Negro">
+			<div class="Margin-Up-Down">
+				<p class="TitleGroup">
+					Datos Personales
+				</p>
+			</div>
+		</div>
+		<!-- Apellido Paterno -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.apellido_paterno.auto_id }}" class="Label">
+					{{form.apellido_paterno.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.apellido_paterno}}
+					{{form.apellido_paterno.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Apellido Materno -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.apellido_materno.auto_id }}" class="Label">
+					{{form.apellido_materno.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.apellido_materno}}
+					{{form.apellido_materno.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Nombre -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.nombre.auto_id }}" class="Label">
+					{{form.nombre.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.nombre}}
+					{{form.nombre.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Documento Identificación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.documento_identificacion.auto_id }}" class="Label">
+					{{form.documento_identificacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.documento_identificacion}}
+					{{form.documento_identificacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Número Documento Identificación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.numero_documento_identificacion.auto_id }}" class="Label">
+					{{form.numero_documento_identificacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.numero_documento_identificacion}}
+					{{form.numero_documento_identificacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Fecha Nacimiento -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.fecha_nacimiento.auto_id }}" class="Label">
+					{{form.fecha_nacimiento.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.fecha_nacimiento}}
+					{{form.fecha_nacimiento.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Género -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.genero.auto_id }}" class="Label">
+					{{form.genero.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="RadioContainer">
+					{{form.genero}}
+					{{form.genero.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Estado Civil -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.estado_civil.auto_id }}" class="Label">
+					{{form.estado_civil.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.estado_civil}}
+					{{form.estado_civil.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Grupo Sanguíneo -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.grupo_sanguineo.auto_id }}" class="Label">
+					{{form.grupo_sanguineo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.grupo_sanguineo}}
+					{{form.grupo_sanguineo.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Hijo -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.hijo.auto_id }}" class="Label">
+					{{form.hijo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="RadioContainer">
+					{{form.hijo}}
+					{{form.hijo.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Número Hijo -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.numero_hijo.auto_id }}" class="Label">
+					{{form.numero_hijo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.numero_hijo}}
+					{{form.numero_hijo.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Observación Persona -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.observacion_persona.auto_id }}" class="Label">
+					{{form.observacion_persona.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.observacion_persona}}
+					{{form.observacion_persona.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Zona -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.distrito.auto_id }}" class="Label">
+					{{form.distrito.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.distrito}}
+					{{form.distrito.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Zona -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.zona.auto_id }}" class="Label">
+					{{form.zona.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.zona}}
+					{{form.zona.errors}}
+				</div>
+			</div>
+		</div>
+		<!--Vía -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.via.auto_id }}" class="Label">
+					{{form.via.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.via}}
+					{{form.via.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Nombre Dirección-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.nombre_direccion.auto_id }}" class="Label">
+					{{form.nombre_direccion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.nombre_direccion}}
+					{{form.nombre_direccion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Grupos Elementos -->
+		<div class="Box">
+			<div class="GroupInputContainer"> 
+				<!-- Edificio -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.edificio.auto_id }}" class="Label">
+						{{form.edificio.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.edificio}}
+					</div>
+					{{form.edificio.errors}}
+				</div>
+				<!-- Departamento -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.departamento.auto_id }}" class="Label">
+						{{form.departamento.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.departamento}}
+					</div>
+					{{form.departamento.errors}}
+				</div>
+				<!-- Apartamento -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.apartamento.auto_id }}" class="Label">
+						{{form.apartamento.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.apartamento}}
+					</div>
+					{{form.apartamento.errors}}
+				</div>
+				<!-- Pabellón -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.pabellon.auto_id }}" class="Label">
+						{{form.pabellon.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.pabellon}}
+					</div>
+					{{form.pabellon.errors}}
+				</div>
+				<!-- Bloque -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.bloque.auto_id }}" class="Label">
+						{{form.bloque.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.bloque}}
+					</div>
+					{{form.bloque.errors}}
+				</div>
+				<!-- Piso -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.piso.auto_id }}" class="Label">
+						{{form.piso.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.piso}}
+					</div>
+					{{form.piso.errors}}
+				</div>
+				<!-- Interior -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.interior.auto_id }}" class="Label">
+						{{form.interior.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.interior}}
+					</div>
+					{{form.interior.errors}}
+				</div>
+				<!-- Pasadizo -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.pasadizo.auto_id }}" class="Label">
+						{{form.pasadizo.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.pasadizo}}
+					</div>
+					{{form.pasadizo.errors}}
+				</div>
+				<!-- Número -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.numero.auto_id }}" class="Label">
+						{{form.numero.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.numero}}
+					</div>
+					{{form.numero.errors}}
+				</div>
+				<!-- Cuadra -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.cuadra.auto_id }}" class="Label">
+						{{form.cuadra.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.cuadra}}
+					</div>
+					{{form.cuadra.errors}}
+				</div>
+				<!-- Manzana -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.manzana.auto_id }}" class="Label">
+						{{form.manzana.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.manzana}}
+					</div>
+					{{form.manzana.errors}}
+				</div>
+				<!-- Etapa -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.etapa.auto_id }}" class="Label">
+						{{form.etapa.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.etapa}}
+					</div>
+					{{form.etapa.errors}}
+				</div>
+				<!-- Lote -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.lote.auto_id }}" class="Label">
+						{{form.lote.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.lote}}
+					</div>
+					{{form.lote.errors}}
+				</div>
+				<!-- Sub Lote -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.sub_lote.auto_id }}" class="Label">
+						{{form.sub_lote.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.sub_lote}}
+					</div>
+					{{form.sub_lote.errors}}
+				</div>
+				<!-- Sector -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.sector.auto_id }}" class="Label">
+						{{form.sector.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.sector}}
+					</div>
+					{{form.sector.errors}}
+				</div>
+				<!-- Kilómetro -->
+				<div class="GroupInputContainerItem">
+					<div class="InputContainer">
+						<label for="{{ form.kilometro.auto_id }}" class="Label">
+						{{form.kilometro.label}} <!-- label_tag | Completo -->
+						</label>
+						{{form.kilometro}}
+					</div>
+					{{form.kilometro.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Denominación-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.denominacion.auto_id }}" class="Label">
+					{{form.denominacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.denominacion}}
+					{{form.denominacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Referencia-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.referencia.auto_id }}" class="Label">
+					{{form.referencia.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.referencia}}
+					{{form.referencia.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Referencia-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.observacion_direccion.auto_id }}" class="Label">
+					{{form.observacion_direccion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.observacion_direccion}}
+					{{form.observacion_direccion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Teléfono-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.telefono_personal.auto_id }}" class="Label">
+					{{form.telefono_personal.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.telefono_personal}}
+					{{form.telefono_personal.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Celular-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.celular_personal.auto_id }}" class="Label">
+					{{form.celular_personal.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.celular_personal}}
+					{{form.celular_personal.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Email-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.email_personal.auto_id }}" class="Label">
+					{{form.email_personal.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.email_personal}}
+					{{form.email_personal.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Datos: Representante Legal -->
+		<div class="Border-Bottom-Negro">
+			<div class="Margin-Up-Down">
+				<p class="TitleGroup">
+					Datos del Docente
+				</p>
+			</div>
+		</div>
+		<!-- Entidad -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.entidad.auto_id }}" class="Label">
+					{{form.entidad.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.entidad}}
+					{{form.entidad.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Tipo Docente -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.tipo_docente.auto_id }}" class="Label">
+					{{form.tipo_docente.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.tipo_docente}}
+					{{form.tipo_docente.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Cargo -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.cargo.auto_id }}" class="Label">
+					{{form.cargo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.cargo}}
+					{{form.cargo.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Grado Instrucción -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.grado_instruccion.auto_id }}" class="Label">
+					{{form.grado_instruccion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.grado_instruccion}}
+					{{form.grado_instruccion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Profesión -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.profesion.auto_id }}" class="Label">
+					{{form.profesion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.profesion}}
+					{{form.profesion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Ocupación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.ocupacion.auto_id }}" class="Label">
+					{{form.ocupacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.ocupacion}}
+					{{form.ocupacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Idioma -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.idioma.auto_id }}" class="Label">
+					{{form.idioma.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.idioma}}
+					{{form.idioma.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- EMail Corporativo -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.email_corporativo.auto_id }}" class="Label">
+					{{form.email_corporativo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.email_corporativo}}
+					{{form.email_corporativo.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Fecha Inicio de Contratación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.fecha_inicio_contratacion.auto_id }}" class="Label">
+					{{form.fecha_inicio_contratacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.fecha_inicio_contratacion}}
+					{{form.fecha_inicio_contratacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Fotografía -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.fotografia.auto_id }}" class="Label">
+					{{form.fotografia.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.fotografia}}
+					{{form.fotografia.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Submit -->
+		<div class="Box">	
+			<input type="submit" id="submit_administrado" value="Registrar." class="Submit"/>
+		</div>
+		<!-- Mensaje Errores -->
+		<div class="MensajeError">
+			<p class="TextError">
+				{% if form.non_field_errors %}
+					  {% for err in form.non_field_errors %}
+					 	 {{ err }}
+					  {% endfor %}
+				{% endif %}
+			</p>
+		</div>
+	</form>
+</article>
+{% endblock section%}
+
+{% block script_template %}
+{% endblock script_template %}
+
+<!-- Footer -->
+<!-- Color de Fondo -->
+{% block color_fondo_PiePagina %}
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

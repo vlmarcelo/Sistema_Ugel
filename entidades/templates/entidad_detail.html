@@ -1,0 +1,266 @@
+{% extends 'detail.html' %}
+{% load static from staticfiles %}
+
+{% block title %} 
+	Detail - Entidad
+{% endblock %}
+<!-- Header -->
+
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Entidad
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %} 
+	{% static 'imagenes/ico/Panel-Control-1.ico' %}
+{% endblock avatar_sistema %}
+<!-- Avatar Modulo -->
+{% block avatar_modulo %} 
+	{% static 'imagenes/ico/Login-1.ico' %}
+{% endblock avatar_modulo %}
+
+<!-- DetailHead - Rotulo -->
+{% block rotulo_detail %}
+	Detalle Entidad
+{% endblock rotulo_detail %}
+
+<!-- DetailHead - ID -->
+{% block id %}
+	id : {{object.id}}
+{% endblock id%}
+
+<!-- DetailBody - Imagen -->
+{% block imagen_detail %}
+	<img src="{{object.logotipo.url}}" alt="{{object.logotipo}}" class="DetailImagen"/>
+{% endblock imagen_detail %}
+
+
+<!-- DetailBody - URL -->
+{% block url_update %} 
+	{% url 'entidad:update' object.id %}
+{% endblock url_update %}
+
+<!-- DetailBody - Descripcion -->
+{% block imagen_descripcion_detail %}
+	{{object.nombre}} 
+{% endblock imagen_descripcion_detail%}
+
+{% block atributos %}
+	
+	<ul class="Atributos">
+		
+		{% if object.fotografia %}
+	
+		{% else %}
+			<li class="AtributoItem">
+				<p class="Atributo Font-Size-P">
+					<span class="Etiqueta Fondo-Celeste">
+						id:	
+					</span>
+
+					<span class="Value">
+						{{object.id}}
+					</span>
+				</p>
+			</li>
+		{% endif %}
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Clase Entidad:
+				</span>
+
+				<span class="Value">
+					{{object.clase_entidad}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Tipo Entidad:	
+				</span>
+
+				<span class="Value">
+					{{object.tipo_entidad}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Nombre o Razón Social:	
+				</span>
+
+				<span class="Value">
+					{{object.nombre}}
+				</span>
+			</p>
+		</li>
+		
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Siglas:	
+				</span>
+
+				<span class="Value">
+					{{object.siglas}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Documento Identificación:	
+				</span>
+
+				<span class="Value">
+					{{object.documento_identificacion}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					N° Documento Indentificación:	
+				</span>
+
+				<span class="Value">
+					{{object.numero_documento_identificacion}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					E-Mail Oficial:	
+				</span>
+
+				<span class="Value">
+					{{object.email_oficial}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Página Web Oficial:	
+				</span>
+
+				<span class="Value">
+					{{object.pagina_web_oficial}}
+				</span>
+			</p>
+		</li>	
+		
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Misión:	
+				</span>
+
+				<span class="Value">
+					{{object.mision}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Visión:	
+				</span>
+
+				<span class="Value">
+					{{object.vision}}
+				</span>
+			</p>
+		</li>	
+		
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="EtiquetaArea Fondo-Celeste">
+					Descripción:	
+				</span>
+
+				<span class="ValueArea">
+					{{object.descripcion}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="EtiquetaArea Fondo-Celeste">
+					Observación:	
+				</span>
+
+				<span class="ValueArea">
+					{{object.observacion}}
+				</span>
+			</p>
+		</li>	
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Logotipo:	
+				</span>
+
+				<span class="Value">
+					{{object.logotipo.url}}
+				</span>
+			</p>
+		</li>		
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Fecha Creación:
+				</span>
+
+				<span class="Value">
+					{% if object.fecha_creacion %}
+						{{object.fecha_creacion|date:"d/m/Y"}} 
+					{% else %}
+						-------
+					{% endif %}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Fecha Cese:
+				</span>
+
+				<span class="Value">
+					{% if object.fecha_cese %}
+						{{object.fecha_cese|date:"d/m/Y h:m:s"}} 
+					{% else %}
+						-------
+					{% endif %}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Fecha Registro:
+				</span>
+
+				<span class="Value">
+					{{object.fecha_registro|date:"d/m/Y h:m:s"}}
+				</span>
+			</p>
+		</li>
+	</ul>
+{% endblock atributos%}
+

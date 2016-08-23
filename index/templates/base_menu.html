@@ -1,0 +1,65 @@
+{% extends 'base_main.html'%}
+{% load static from staticfiles %}
+
+{% block header %}
+	<!-- Head Menu-->
+	<div class="HeadMenu {% block color_fondo_headMenu %} {% endblock color_fondo_headMenu %}">
+		<!-- Avatar - Imagen - Sistema-->
+		<figure class="Avatar" id="Avatar-Sistema">
+			<img src="{% block avatar_sistema %} {% endblock avatar_sistema %}" alt="" class="Avatar-Imagen"/>
+		</figure>
+		<!-- Rótulo del Módulo -->
+		<div class="HeadMenu-Marco">
+			<h2 class="SubTitulo">
+				<a href="{% block url_menu%} {% endblock url_menu %}" class="SubTitulo-Link">
+					{% block titulo_menu%}
+					{% endblock titulo_menu%}
+				</a>	
+			</h2>
+		</div>
+		<!-- Avatar - Imagen - Modulo -->
+		<figure class="Avatar" id="Avatar-Modulo">
+			<img src="{% block avatar_modulo %} {% endblock avatar_modulo %}" alt="" class="Avatar-Imagen"/>
+		</figure>
+	</div>
+{% endblock header %}
+
+
+{% block footer %}
+	<div class="PiePagina {% block color_fondo_PiePagina %} {% endblock color_fondo_PiePagina %}">
+			<!-- Logotipo Entidad -->
+			<figure class="LogoTipoEntidad" id="LogoTipoEntidad-Usuario">
+				<!-- Imagen -->
+				<img src="{% static "imagenes/png/Ugel-2.png" %}" alt="" class="LogoTipoEntidad-Imagen"/>
+				<!-- Nombre Entidad -->
+				<figcaption class="LogoTipoEntidad-NombreEntidad">
+					 <a href="#" class="LogoTipoEntidad-NombreEntidad-Link">
+					 	U.G.E.L.
+					 </a>
+				</figcaption>
+			</figure>
+			<!-- Copyright -->
+			<div class="Copyright">
+				<p class="Copyright-Descripcion">
+					© Copyright  
+				</p>
+				<!-- Entidad -->
+				<h2  class="Copyright-Entidad">
+					<a href="#" class="Copyright-Entidad-Link">
+						Unidades de Gestión Educativa Local
+					</a>
+				</h2>
+			</div>
+			<!-- Logotipo Entidad Creador imagenes/jpg/Ojo-Bionico-1.jpg"-->
+			<figure class="LogoTipoEntidad" id="LogoTipoEntidad-Creador">
+				<!-- Nombre Entidad -->
+				<figcaption class="LogoTipoEntidad-NombreEntidad">
+					 <a href="#" class="LogoTipoEntidad-NombreEntidad-Link">
+					 	U.T.I.
+					 </a>
+				</figcaption>
+				<!-- Imagen -->
+				<img src="{% static "imagenes/png/UIGV.png" %}" alt="" class="LogoTipoEntidad-Imagen Border-Radius-Circular"/>
+			</figure>
+		</div>
+{% endblock footer%}

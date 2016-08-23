@@ -1,0 +1,191 @@
+{% extends 'list.html' %}
+{% load static from staticfiles %}
+
+{% block title %} List - Entidad {% endblock %}
+
+<!-- Header -->
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Entidad
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %} 
+	{% static 'imagenes/ico/Panel-Control-1.ico' %}
+{% endblock avatar_sistema %}
+<!-- Avatar Modulo -->
+{% block avatar_modulo %} 
+	{% static 'imagenes/ico/Login-1.ico' %}
+{% endblock avatar_modulo %}
+
+<!-- Article - List -->
+{% block url_create_item %}
+	{% url "entidad:create" %}
+{% endblock url_create_item %}
+
+{% block AddNew_mensaje %}
+	Agregar Entidad
+{% endblock AddNew_mensaje %}
+<!-- section -->
+{% block table %}
+		<!-- Contenedor -->
+		<div class="TablaContainer">
+			<!-- Tabla -->
+			<table class="Tabla">
+				<!-- Tabla Head -->
+				<thead class="THeader Fondo-Verde-Oscuro">
+					<tr class="TRow">
+						<th class="THead">
+							<a href="#" class="THead-Link"> id </a>
+						</th>
+
+						<th class="THead">
+							<a href="#" class="THead-Link"> clase_entidad </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> tipo_entidad </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> Nombre </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> siglas </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> documentos identificación </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> número documentos identificación </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> email oficial </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> página web oficial </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> mision </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> vision </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> descripcion </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> observacion </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> logotipo </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> Fecha Creación </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> Fecha Cese </a>
+						</th>
+						<th class="THead">
+							<a href="#" class="THead-Link"> Fecha Registro </a>
+						</th>
+					</tr>
+				</thead>
+				<!-- Tabla Body -->
+				<tbody class="TBody">
+					{%for entidad in object_list%}
+					<tr class="TRow">
+						<td class="TData">
+							{{entidad.id}}
+						</td>
+						<td class="TData">
+							{{entidad.clase_entidad}}
+						</td>
+						<td class="TData">
+							{{entidad.tipo_entidad}}
+						</td>
+						<td class="TData">
+							<a href="{% url 'entidad:update' entidad.id %}" class="TData-Link">
+								{{entidad.nombre}}
+							</a>
+						</td>
+						<td class="TData">
+							{{entidad.siglas}}
+						</td>
+						<td class="TData">
+							{{entidad.documento_identificacion}}
+						</td>
+						<td class="TData">
+							{{entidad.numero_documento_identificacion}}
+						</td>
+						<td class="TData">
+							{{entidad.email_oficial}}
+						</td>
+						<td class="TData">
+							<a href="{{entidad.pagina_web_oficial}}" class="TData-Link">
+								{{entidad.pagina_web_oficial}}
+							</a>
+						</td>
+						<td class="TData">
+							{{entidad.mision}}
+						</td>
+						<td class="TData">
+							{{entidad.vision}}
+						</td>
+						<td class="TData">
+							{{entidad.descripcion}}
+						</td>
+						<td class="TData">
+							{{entidad.observacion}}
+						</td>
+						<td class="TData">
+							{{entidad.logotipo}}
+						</td>
+						<td class="TData">
+							{{entidad.fecha_creacion|date:"d/m/Y h:m:s"}}
+						</td>
+						<td class="TData">
+							{{entidad.fecha_cese|date:"d/m/Y h:m:s"}}
+						</td>
+						<td class="TData">
+							{{entidad.fecha_registro|date:"d/m/Y h:m:s"}}
+						</td>
+					</tr>
+					{% endfor%}
+				</tbody>
+
+			</table>	
+		</div>
+{% endblock table%}
+
+<!-- Paginacion -->
+<!-- Valor de total de items -->
+{% block valor_total %} 
+	{% if total == 0 %}
+		0
+	{% else %}
+		{{total}}
+	{% endif %}
+{% endblock valor_total %}
+
+<!-- Color de Boton Prev de Pagina -->
+{% block boton_pagina_prev_color %}
+	Color_Rojo
+{% endblock boton_pagina_prev_color %}
+
+<!-- Color de Boton Next de Pagina -->
+{% block boton_pagina_next_color %}
+	Color_Rojo
+{% endblock boton_pagina_next_color %}
+
+<!-- Color de Fondo deL footer -->
+{% block color_fondo_PiePagina %} 
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

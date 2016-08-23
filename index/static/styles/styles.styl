@@ -1,0 +1,397 @@
+@import 'normalize.styl'
+@import 'fonts.styl'
+@import 'aside.styl'
+@import 'base_menu.styl'
+@import 'base_menu_nav.styl'
+@import 'menu.styl'
+@import 'detail.styl'
+@import 'list.styl'
+@import 'login.styl'
+@import 'retoques.styl'
+@import 'componentes.styl'
+@import 'texto_color.styl'
+/*
+	Colores
+*/
+amarillo = #e5b801
+amarillo_claro = #ffe788
+azul = #225aa4
+celeste_claro = #1573A3
+celeste_oscuro = #2288bb
+azul_acero = #1e6381
+azul_oscuro = #273b47
+celeste = #298fb7
+//celeste_claro = #23a2dc
+celeste_cristal = #35afe3
+celeste_agua = #c2e1f5
+dorado = #7b7b7f
+gris = #FAFAFA
+gris_claro = #eff2e7
+gris_oscuro = #333636
+naranja = #DD4F24
+transparente = rgba(255, 255, 255, 0.5)
+turqueza = #1bd6e0
+verde_agua = #cdf1e2
+verde_claro = #80BCA3
+verde_oscuro = #35656d
+verde_negro = #033333
+rojo = #ff4842
+li 
+	list-style none
+a
+article
+aside
+body
+div
+figcaption
+figure
+h1
+h2
+h3	
+h4
+header
+input
+li
+p
+section
+select 
+option
+span
+table 
+tbody 
+textarea
+th 
+thead
+tr
+ul
+ol
+video
+	box-sizing border-box
+	margin 0
+	padding 0
+a 
+	text-decoration none
+	color white
+body 
+	background gris_claro
+	font-family "SANS-SERIF" "Comic Sans MS"
+	font-size 16px
+	
+img 
+	vertical-align top
+	
+#ID
+	width 100px
+	border 1px solid black
+/*
+	Mixins 
+*/
+//H2 1.3em MOBIL 1.8em TABLET 2em DESKTOP 
+H2(Color, TextShadow, FontSize)
+	color Color 
+	text-align center 
+	text-shadow 1px 1px 10px TextShadow
+	font-size FontSize
+	font-weight bolder
+	&-Link 
+		transition .3s
+		&:hover 
+			text-decoration underline
+//H2 1.2em MOBIL 1.7em TABLET 1.9em DESKTOP 
+H3(Color, TextShadow, FontSize, TextAlign=center)
+	color Color 
+	text-align TextAlign 
+	text-shadow 1px 1px 10px TextShadow
+	font-size FontSize
+	font-weight bolder
+	&-Link 
+		transition .3s
+		&:hover 
+			text-decoration underline
+		
+//H4 1em MOBIL 1.5em TABLET 1.8em DESKTOP 
+H4(Color, TextShadow, FontSize, TextAlign=center)
+	color Color 
+	text-align TextAlign 
+	text-shadow 1px 1px 10px TextShadow
+	font-size FontSize
+	font-weight bolder
+	&-Link 
+		width 100%
+		transition .3s
+		&:hover 
+			text-decoration underline
+
+Background(Color)
+	background Color
+	
+Background-RGBA(Color, Opacidad=.3)
+	background rgba(Color, Opacidad)
+
+///////////////////////////////////////////////////////////////////////////////
+
+/*
+	Clases por Defecto
+*/
+
+	
+.Fondo_Border_Azul  
+	background celeste_oscuro
+	border 1px solid celeste_claro	
+.Border-Bottom-Gris 
+	border-bottom 1px solid gris_oscuro
+	
+.Display_None 
+	display none
+.Fondo-Gradiente-Blanco-Turqueza
+	background radial-gradient(white, turqueza)
+.Fondo-Gradiente-Blanco-Azul
+	background radial-gradient(white, azul)
+.Fondo-Gradiente-Blanco-Gris-Oscuro 
+	background radial-gradient(white, gris_oscuro)
+.Fondo-Gradiente-Blanco-Azul-Acero 
+	background radial-gradient(white, azul_acero)
+
+.Fondo-Blanco-Transparente 
+	background rgba(white, .2)
+.Fondo-Turqueza-Transparente 
+	background rgba(turqueza, .5)
+.Fondo-Rojo-Transparente 
+	background rgba(rojo, .7)
+.Fondo-Negro-Transparente
+	background rgba(black, .5) 
+.Fondo-Azul-Transparente
+	background rgba(azul, .5)
+	
+.Fondo-Azul
+	background azul
+.Fondo-Celeste 
+	background celeste
+.Fondo-Rojo 
+	background rojo
+.Fondo-Turqueza
+	background turqueza
+.Fondo-Verde-Oscuro
+	background verde_oscuro
+.Fondo-Rojo-Encendido 
+	background red
+.Fondo-Negro 
+	background black
+.Fondo-Amarillo
+	background amarillo_claro
+.Border-Radius-Circular
+	border-radius 50%
+.Position-Absolute
+	position absolute
+.Position-Absolute-Top
+	position absolute
+	top 0
+.Position-Absolute-Bottom
+	position absolute
+	bottom 0
+.Position-Initial
+	position initial
+.Font-Size-Movil-H2
+	font-size 1.2em
+.Font-Size-P 
+	font-size .8em
+.Texto 
+	padding .25em .5em 
+	color black 
+	font-size 1em
+	text-align justify
+	
+
+
+.SubTitulo
+	H2(white, black, 1.3em)		
+.Rotulo 
+	H3(white, black, 1.1em)
+.BoxLegenda 
+	margin 2em 0
+.Legenda
+	H4(black, white, 1.05em, left)
+.H4
+	H4(white, black, 1em)
+.ContainerForm
+	margin .5em
+
+
+		
+ 
+			    
+.Input-Text-Mobil
+	background rgba(gris_oscuro, .4)
+	border 1px solid gris
+	border-radius 5px
+	box-shadow 0 0 8px black
+	color white 
+	font-weight bolder 
+	height 35px
+	outline 0
+	padding 0 .5em
+	text-shadow 1px 1px 3px black
+	width 90%
+	
+.Input-Text-Mobil-Gris
+	text-rendering auto
+	background white
+	border 1px solid gris
+	border-radius 5px
+	box-shadow 0 0 10px black
+	color black 
+	height 35px
+	outline 0
+	padding 0 .5em
+	width 90%
+
+.Input-Text-Small 
+	border 1px solid gris 
+	border-radius 3px 
+	box-shadow 0 0 5px black 
+	font-size 1em
+	height 32px 
+	line-height 32px
+	margin .5em 0
+	outline 0 
+	padding 0 .5em 
+	width 100%
+	&:focus 
+		border 1px solid #0a8ecd
+		box-shadow 0 0 3px turqueza
+		//box-shadow inset 0 2px 4px 0 rgba(10,142,205,.3)
+.InputFile 
+	align-items center
+	border-radius 3px 
+	cursor pointer
+	display flex 
+	height 32px
+	font-size 10pt
+	justify-content center
+	margin .5em 0 
+	padding .5em 0
+	outline 0
+	user-select none
+	width 100%
+ 	font-weight bolder
+ 	white-space nowrap
+ 	line-height 32px
+ 	transition .3s
+ 	&:focus 
+ 		border 1px solid #0a8ecd
+		box-shadow 0 0 3px turqueza
+ 		//box-shadow inset 0 2px 4px 0 rgba(10,142,205,.3)
+
+
+	
+.InputContainer-Center 
+	margin .5em 0
+	display flex 
+	justify-content center 
+	align-items center
+.Lista 
+	padding 0
+    margin 3px 0 0 0
+    list-style-type none
+    max-height 150px
+    overflow-y scroll
+    &-Item 
+    	display list-item
+    	text-align match-parent
+.Legenda
+	margin .5em 0
+	padding 0 .5em
+	display flex 
+	align-items center
+	justify-content space-between
+	width 100%
+	appearance none
+
+
+.Submit 
+	border 1px solid white 
+	box-shadow 0 0 10px black 
+	color white 
+	font-size 1em
+	height 35px 
+	line-height 32px
+	margin .6em 0
+	outline 0 
+	overflow hidden
+	padding 0 .5em 
+	text-shadow 1px 1px 10px black
+	transition .3s
+	width 70%
+	&:hover 
+		background rgba(black, .3)	
+
+.Submit-Rojo 
+	border 1px solid white 
+	border-radius .5em
+	box-shadow 0 0 10px black 
+	color white 
+	font-size 1em
+	font-weight bolder
+	height 32px 
+	line-height 32px
+	margin .6em 0
+	outline 0 
+	overflow hidden
+	padding 0 .5em 
+	text-shadow 1px 1px 10px black
+	transition .3s
+	width 70%
+	&:hover 
+		background red	
+		
+.errorlist
+	width 100%
+	>li 
+		font-size .7em
+		font-weight bolder 
+		text-align right
+		color rojo
+.Article-Main
+	background url("../imagenes/jpg/Mar-Dia-1.jpg")
+	
+.FormLogin
+	overflow hidden
+	border-radius .5em 
+	border 2px solid black
+	width 320px
+	margin 0 auto
+	padding .5em
+	background rgba(black, .2)
+.RegistrateLink
+	color red
+@media screen and (min-width:480px)
+	
+	.Rotulo 
+		H3(white, black, 1.5em)
+	.SubTitulo
+		H2(white, black, 1.8em)
+	
+	
+	  .Submit
+		width 50%	
+@media screen and (min-width:1000px)
+
+	.Article-Main
+		display flex 
+		justify-content space-between 
+		align-items center
+		padding 0 .5em
+	.SliderContainer 
+		width 70%
+	.Rotulo 
+		H3(white, black, 1.7em)	
+	.SubTitulo 
+		H2(white, black, 2.1em)	
+	
+	.Submit-Rojo
+	.Submit
+		width 30%
+		
+
+
+	

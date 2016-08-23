@@ -1,0 +1,103 @@
+{% extends 'base_menu_nav.html' %}
+
+{% block section %}	
+	<article class="List">
+		<!-- Acciones -->
+		<div class="Actions">
+			<!-- Buscador -->
+			<div class="Buscador">
+				<form action="" method="GET" class="Buscador-Form">
+					<!-- Icono -->
+					<div class="Icono">
+						<!-- Label -->
+						<label for="Objeto-Buscador" class="Icono-Label icon-search">
+							
+						</label>
+					</div>
+					<!-- Elemento - Buscador -->
+					<div class="Box">
+						<input id="Objeto-Buscador" name="buscar" type="text" placeholder="Buscar" class="InputText" autocomplete/>
+					</div>
+				</form>
+			</div>
+			<!-- Agregar Registro Nuevo -->
+			<div class="Add">
+				<!-- URL | Create -->
+				<a href="{% block url_create_item %} {% endblock url_create_item %}" class="Add-Link"> 
+					<span class="AddNew">
+						<!-- Agregar Nuevo Items -->
+						{% block AddNew_mensaje %}
+						{% endblock AddNew_mensaje %}
+					</span>
+					<!-- Icono de Agregar -->
+					<span class="AddIcono icon-plus">
+						
+					</span>
+				</a>
+			</div>
+		</div>
+		
+
+		<!-- Tabla de Registro de Items -->
+		{% block table %}
+
+		{% endblock table %}
+
+		<!-- Paginación -->
+		<div class="Paginacion">
+			<!-- Total de Registro -->
+			<div class="Total">
+				<p class="Total-Items">
+					<!-- Valor Total -->
+					Total: <span class="TotalValor"> {% block valor_total %} {% endblock valor_total %} </span>
+				</p>
+			</div>
+			<!-- Paginas -->
+		    <div class="Paginas">
+    		    <!-- Botón Atras - Prev -->
+    	    	{% if page_obj.has_previous %}
+    		        <div class="BotonPagina">
+    		       		<a href="?{{ page_obj.previous_page_number.querystring }}" class="BotonPagina-Link icon-circle-left {% block boton_pagina_prev_color %} {% endblock boton_pagina_prev_color %}"> </a>
+    		        </div>
+    	    	{% else %}
+    		       <div class="BotonPagina">
+    		       		<span class="BotonPagina-Disable icon-circle-left"> </span>
+    		        </div>
+    	    	{% endif %}
+    		   
+    		    <!-- Rango de Páginas -->
+    			<div class="RangoPagina">
+    			    {% for page in page_obj.pages %}
+    			        {% if page %}
+    			            {% ifequal page page_obj.number %}
+    			                <div class="Pagina">
+    			               		<span class="Pagina-Enable {% block fondo_border %} {% endblock fondo_border %}">{{ page }}</span>
+    			               	</div>
+    			            {% else %}
+    			                <div class="Pagina">
+    			                	<a href="?{{ page.querystring }}" class="Pagina-Disable">{{ page }}</a>
+    			                </div>
+    			            {% endifequal %}
+    			        {% else %}
+    			            <div class="Pagina">
+    			            	<span class="Pagina-Varios">
+    			            		...
+    			            	</span>
+    			            </div>
+    			        {% endif %}
+    			    {% endfor %}
+    		    </div>
+    		    <!-- Botón Adelante - Next -->
+    		    {% if page_obj.has_next %}
+    		        <div class="BotonPagina">
+    		        	<a href="?{{ page_obj.next_page_number.querystring }}" class="BotonPagina-Link icon-circle-right {% block boton_pagina_next_color %} {% endblock boton_pagina_next_color%} "> </a>
+    		        </div>
+    		    {% else %}
+    		        <div class="BotonPagina">
+    		        	<span class="BotonPagina-Disable icon-circle-right"> </span>
+    		        </div>
+    		    {% endif %}
+		    </div>
+		</div>
+	</article>
+{% endblock section %}

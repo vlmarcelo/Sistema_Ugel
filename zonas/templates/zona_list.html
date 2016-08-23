@@ -1,0 +1,108 @@
+{% extends 'list.html' %}
+{% load static from staticfiles %}
+{% load render_table from django_tables2 %}
+
+{% block title %} List - Zona {% endblock %}
+
+<!-- Header -->
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Zona
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %} 
+	{% static 'imagenes/ico/Panel-Control-1.ico' %}
+{% endblock avatar_sistema %}
+<!-- Avatar Modulo -->
+{% block avatar_modulo %} 
+	{% static 'imagenes/ico/Login-1.ico' %}
+{% endblock avatar_modulo %}
+
+<!-- Article - List -->
+{% block url_create_item %}
+	{% url "zona:create" %}
+{% endblock url_create_item %}
+
+{% block AddNew_mensaje %}
+	Agregar Zona
+{% endblock AddNew_mensaje %}
+<!-- section -->
+{% block table %}
+		<!-- Contenedor -->
+		<div class="TablaContainer">
+			<!-- Tabla -->
+			<table class="Tabla">
+				<!-- Tabla Head -->
+				<thead class="THeader Fondo-Verde-Oscuro">
+					<tr class="TRow">
+						<th class="THead">
+							<a href="#" class="THead-Link"> id </a>
+						</th>
+
+						<th class="THead">
+							<a href="#" class="THead-Link"> Nombre </a>
+						</th>
+
+						<th class="THead">
+							<a href="#" class="THead-Link"> Fecha Registro </a>
+						</th>
+					</tr>
+				</thead>
+				<!-- Tabla Body -->
+				<tbody class="TBody">
+					{%for zona in object_list%}
+					<tr class="TRow">
+						<td class="TData">
+							{{zona.id}}
+						</td>
+						<td class="TData">
+							<a href="{% url 'zona:update' zona.id %}" class="TData-Link">
+								{{zona.nombre}}
+							</a>
+						</td>
+						<td class="TData">
+							{{usuario.fecha_registro|date:"d/m/Y h:m:s"}}
+						</td>
+					</tr>
+					{% endfor%}
+				</tbody>
+
+			</table>	
+		</div>
+{% endblock table%}
+
+<!-- Paginacion -->
+<!-- Valor de total de items -->
+{% block valor_total %} 
+	{% if total_usuario == 0 %}
+		0
+	{% else %}
+		{{total_usuarios}}
+	{% endif %}
+{% endblock valor_total %}
+
+<!-- Color de Boton Prev de Pagina -->
+{% block boton_pagina_prev_color %}
+	Color_Rojo
+{% endblock boton_pagina_prev_color %}
+
+<!-- Color de Boton Next de Pagina -->
+{% block boton_pagina_next_color %}
+	Color_Rojo
+{% endblock boton_pagina_next_color %}
+
+
+<!-- Color de Fondo deL footer -->
+{% block color_fondo_PiePagina %} 
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

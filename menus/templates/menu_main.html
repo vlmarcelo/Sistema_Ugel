@@ -1,0 +1,69 @@
+{% extends 'base_menu_nav.html' %}
+{% load static from staticfiles %}
+
+{% block title %} 
+	Menu - Main
+{% endblock %}
+
+<!-- Header -->
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Main
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %}
+	{% static "imagenes/png/Gorra-1.png" %}
+{% endblock avatar_sistema %}
+
+{% block avatar_modulo %}
+	{% static "imagenes/png/Profesor-1.png" %}
+{% endblock avatar_modulo %}
+
+
+{% block section%}
+	<!-- Menu Grafico -->
+	<div class="MenuGrafico">
+		<!-- MenuGrafico - Container -->
+		<div class="MenuGraficoContainer">
+			<!-- MenuGrafico - Items -->
+			<ul class="Menu">
+				<!-- MenuGrafico - Items - Item -->
+				{%for menu in object_list%}
+				<li class="MenuItem">
+					<!-- Avatar -->
+					<figure class="Avatar">
+						<!-- Avatar - Link -->
+						<a href="" class="Avatar-Link">
+							<img src="{{menu.imagen.url}}" alt="{{menu.nombre}}" class="Avatar-Link-Imagen"/>
+						</a>
+						<!-- Avatar - Descripcion -->
+						<figcaption class="Avatar-Nombre">
+							<a href="{{menu.url}}" class="Avatar-Nombre-Link">
+								{{menu.nombre}}
+							</a>
+						</figcaption>
+					</figure>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock section%}
+{% block script_template %}
+{% endblock script_template %}
+
+<!-- Footer -->
+<!-- Color de Fondo -->
+{% block color_fondo_PiePagina %}
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

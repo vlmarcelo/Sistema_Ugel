@@ -1,0 +1,156 @@
+{% extends 'detail.html' %}
+{% load static from staticfiles %}
+{% block title %} 
+	Detail - Usuario
+{% endblock %}
+<!-- Header -->
+
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Usuario | Menu
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %} 
+	{% static 'imagenes/ico/Panel-Control-1.ico' %}
+{% endblock avatar_sistema %}
+<!-- Avatar Modulo -->
+{% block avatar_modulo %} 
+	{% static 'imagenes/ico/Login-1.ico' %}
+{% endblock avatar_modulo %}
+
+<!-- DetailHead - Rotulo -->
+{% block rotulo_detail %}
+	Detalle de Usuario
+{% endblock rotulo_detail %}
+
+<!-- DetailHead - ID -->
+{% block id %}
+	id : {{object.id}}
+{% endblock id%}
+
+<!-- DetailBody - Imagen -->
+{% block imagen_detail %}
+	<img src="{{object.avatar.url}}" alt="{{object.username}}" class="DetailImagen"/>
+{% endblock imagen_detail %}
+
+
+<!-- DetailBody - URL -->
+{% block url_update %} 
+	{% url 'usuario:update' object.id %}
+{% endblock url_update %}
+
+<!-- DetailBody - Descripcion -->
+{% block imagen_descripcion_detail %}
+	{{object.username}}
+{% endblock imagen_descripcion_detail%}
+
+{% block atributos %}
+	<ul class="Atributos">
+		{% if object.avatar %}
+		{% else %}
+			<li class="AtributoItem">
+				<p class="Atributo Font-Size-P">
+					<span class="Etiqueta Fondo-Celeste">
+						id:	
+					</span>
+
+					<span class="Value">
+						{{object.id}}
+					</span>
+				</p>
+			</li>
+		{% endif %}
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Username:	
+				</span>
+
+				<span class="Value">
+					{{object.username}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					E-Mail:	
+				</span>
+
+				<span class="Value">
+					{{object.email}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Active	
+				</span>
+
+				<span class="Value">
+					{{object.is_active}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Staff	
+				</span>
+
+				<span class="Value">
+					{{object.is_staff}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Super User	
+				</span>
+
+				<span class="Value">
+					{{object.is_superuser}}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Último Login
+				</span>
+
+				<span class="Value">
+					{% if object.last_login %}
+						{{object.last_login|date:"d/m/Y h:m:s"}} 
+					{% else %}
+						-------
+					{% endif %}
+				</span>
+			</p>
+		</li>
+		<li class="AtributoItem">
+			<p class="Atributo Font-Size-P">
+				<span class="Etiqueta Fondo-Celeste">
+					Fecha Registro
+				</span>
+
+				<span class="Value">
+					{{object.fecha_registro|date:"d/m/Y h:m:s"}}
+				</span>
+			</p>
+		</li>
+	</ul>
+{% endblock atributos%}
+

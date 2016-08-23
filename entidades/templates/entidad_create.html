@@ -1,0 +1,253 @@
+{% extends 'base_menu_nav.html' %}
+{% load static from staticfiles %}
+
+{% block title %} 
+	Nueva - Entidad
+{% endblock %}
+
+<!-- Header -->
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu | Entidad
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %} 
+	{% static 'imagenes/ico/Panel-Control-1.ico' %}
+{% endblock avatar_sistema %}
+<!-- Avatar Modulo -->
+{% block avatar_modulo %} 
+	{% static 'imagenes/ico/Login-1.ico' %}
+{% endblock avatar_modulo %}
+
+{% block section %}
+	<article class="ContainerForm">
+		<!-- Titulo -->
+		<div class="RotuloContainer Border-Bottom-Rojo">
+			<h3 class="Rotulo ">
+				Nuevo Entidad
+			</h3>
+		</div>
+		<!-- Formulario -->
+		<form action="" id="form_entidad_create" method="post" enctype="multipart/form-data" class="Form">
+
+		</form>
+	</article>
+{% endblock section %}
+
+{% block script_template %}
+	<script id ="form_entidad_create_template" type="text/template">
+		{% csrf_token %}
+		<!-- Nombre-->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.clase_entidad.auto_id }}" class="Label">
+					{{form.clase_entidad.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.clase_entidad}}
+					{{form.clase_entidad.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Tipo Entidad -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.tipo_entidad.auto_id }}" class="Label">
+					{{form.tipo_entidad.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.tipo_entidad}}
+					{{form.tipo_entidad.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Nombre -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.nombre.auto_id }}" class="Label">
+					{{form.nombre.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.nombre}}
+					{{form.nombre.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Siglas -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.siglas.auto_id }}" class="Label">
+					{{form.siglas.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.siglas}}
+					{{form.siglas.errors}}
+				</div>
+			</div>
+		</div>
+		
+		<!-- Documento de Identificación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.documento_identificacion.auto_id }}" class="Label">
+					{{form.documento_identificacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.documento_identificacion}}
+					{{form.documento_identificacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Número de Documento de Indetificación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.numero_documento_identificacion.auto_id }}" class="Label">
+					{{form.numero_documento_identificacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.numero_documento_identificacion}}
+					{{form.numero_documento_identificacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Misión -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.mision.auto_id }}" class="Label">
+					{{form.mision.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.mision}}
+					{{form.mision.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Visión -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.vision.auto_id }}" class="Label">
+					{{form.vision.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.vision}}
+					{{form.vision.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Logotipo -->
+		<div class="Box" id="box_logotipo">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.logotipo.auto_id }}" class="Label">
+					{{form.logotipo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.logotipo}}
+					{{form.logotipo.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Fecha Creación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.fecha_creacion.auto_id }}" class="Label">
+					{{form.fecha_creacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.fecha_creacion}}
+					{{form.fecha_creacion.errors}}
+				</div>
+			</div>
+		</div>
+
+		<!-- Descripción -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.descripcion.auto_id }}" class="Label">
+					{{form.descripcion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.descripcion}}
+					{{form.descripcion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Observación -->
+		<div class="Box">
+			<div class="InputContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.observacion.auto_id }}" class="Label">
+					{{form.observacion.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputComponent">
+					{{form.observacion}}
+					{{form.observacion.errors}}
+				</div>
+			</div>
+		</div>
+		<!-- Activo -->
+		<div class="Box">
+			<div class="CheckBoxContainer">
+				<div class="LabelContainer">
+					<label for="{{ form.activo.auto_id }}" class="Label">
+					{{form.activo.label}} <!-- label_tag | Completo -->
+					</label>
+				</div>
+				<div class="InputBool">
+					{{form.activo}}
+					{{form.activo.errors}}
+				</div>
+			</div>
+		</div>
+		<div class="Box">	
+			<input type="submit" id="submit_entidad" value="Registrar." class="Submit"/>
+		</div>
+		<div class="MensajeError">
+			<p class="TextError">
+				{% if form.non_field_errors %}
+					  {% for err in form.non_field_errors %}
+					 	 {{ err }}
+					  {% endfor %}
+				{% endif %}
+			</p>
+		</div>
+	</script>
+{% endblock script_template %}	
+
+<!-- Footer -->
+<!-- Color de Fondo -->
+{% block color_fondo_PiePagina %}
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

@@ -1,0 +1,76 @@
+.MenuGraficoContainer 
+	margin .5em 0
+.Menu 
+	overflow-y auto
+	height 350px
+	display flex 
+	justify-content center
+	align-items center
+	flex-direction column
+	
+.MenuItem 
+	border-bottom 2px solid turqueza
+	width 85%
+
+.Avatar 
+	height 70px 
+	display flex 
+	justify-content center 
+	align-items center
+	&-Link 
+		display block 
+		width 45px 
+		height 45px 
+		&-Imagen 
+			vertical-align top
+			width 100% 
+			height 100%  
+	&-Nombre 
+		margin-left .5em
+		height 35px 
+		width 80%
+		border 2px solid black
+		border-radius .5em
+		box-shadow 0 0 10px black 
+		&-Link 
+			color white
+			display block
+			font-size .9em
+			font-weight bolder
+			height 100%
+			line-height 32px 
+			text-align center 
+			text-shadow 1px 1px 10px black
+			transition .3s
+			width 100%
+			&:hover 
+				text-decoration underline
+				background rgba(white, .3)
+
+
+@media screen and (min-width:480px)
+	.Menu 
+		margin .5em
+		flex-wrap wrap
+		height auto
+		display flex
+		justify-content center 
+		align-items center
+		flex-direction row
+		padding 0 2em
+		height 480px
+	.MenuItem  
+		border 0
+		width 50%
+	.Avatar 
+		flex-direction column
+		height 250px 
+		&-Link
+			width 180px 
+			height 180px
+		&-Nombre
+			margin .5em 0
+			width 70%
+@media screen and (min-width:1000px)
+	.MenuItem
+		width 30%

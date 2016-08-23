@@ -1,0 +1,119 @@
+rojo = #ff4842
+nav 
+	background red
+	box-shadow 1px 1px 10px black
+	z-index 5
+	.Usuario
+		height 8vh
+		position relative
+		display flex
+		justify-content space-between 
+		align-items center
+		.Open 
+			width 35%
+			margin 0 auto
+			display flex 
+			justify-content start
+			align-items center
+			>div
+				>a 
+					line-height 35px
+					width 35px
+					height 35px
+					font-size 1.5em
+					text-align center
+					display block
+					font-weight bolder
+					text-shadow 1px 1px 10px black
+				
+		&-Panel
+			
+			bottom -10px
+			right 16px
+			width 200px 
+			position absolute
+			display none 
+			justify-content center 
+			align-items center
+			flex-direction column
+			.Configuracion
+				background rgba(black, .6)
+				border 1px solid turqueza
+				border-radius 0 0 .5em .5em
+				box-shadow 1px 1px 10px black
+				position absolute
+				width 200px 
+				z-index 5
+				&-Item 
+					margin .25em 0
+					text-align left
+					height 35px
+					&-Link 
+						line-height 35px
+						display block
+						font-weight bolder
+						font-size 1em
+						display flex 
+						justify-content center
+						align-items center
+						text-shadow 1px 1px 10px black
+						.Icono 
+							line-height 35px
+							text-align center
+							width 20%
+							height 35px 
+							display block
+							border-right 1px solid white
+						.Descripcion 
+							line-height 35px
+							text-align center
+							display block
+							width 80%
+							height 100%
+							&:hover 
+								text-decoration underline
+					
+		&-Avatar
+			width 65%
+			align-items center
+			display flex 
+			height 42px 
+			justify-content center 
+			.BotonConfiguracion 
+				border-left 2px solid white
+				width 35px 
+				height 35px
+				&-Link
+					color white
+					display block
+					font-weight bolder
+					height 100%
+					line-height 35px
+					text-align center
+					width 100%
+
+			&-Link 
+				display block
+				width 35px 
+				height 35px 
+				border-radius 50%
+				background rgba(black, .3)
+				&-Imagen 
+					box-shadow 0 0 6px black
+					vertical-align top
+					width 35px
+					height 35px 
+					border-radius 50%
+					transition .5s
+					&:hover
+						transform rotateY(360deg)
+			&-Nombre 
+				margin 0 auto
+				&-Link 
+					font-size 1em
+					font-weight bolder 
+					text-align center 
+					text-shadow 1px 1px 10px black
+					transition .3s
+					&:hover
+						text-decoration underline

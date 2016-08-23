@@ -1,0 +1,76 @@
+/*
+	Colores
+*/
+amarillo_claro = #ffe788
+azul = #225aa4
+celeste_claro = #1573A3
+celeste_oscuro = #2288bb
+celeste_cristal = #35afe3
+azul_acero = #1e6381
+azul_oscuro = #273b47
+celeste = #298fb7
+celeste_agua = #c2e1f5
+gris = #FAFAFA
+gris_claro = #eff2e7
+gris_oscuro = #333636
+naranja = #DD4F24
+transparente = rgba(255, 255, 255, 0.5)
+turqueza = #1bd6e0
+verde_agua = #cdf1e2
+verde_claro = #80BCA3
+verde_oscuro = #35656d
+verde_negro = #033333
+rojo = #ff4842
+.MenuItemsAside 
+	width 100%
+	height 35px 
+	&-Link
+		font-weight bolder
+		text-shadow 1px 1px 10px black
+		padding 0 .5em 
+		display block 
+		width 100%
+		height 100%
+		line-height 35px
+		transition .3s
+
+		&.active 
+		&:hover 
+			background-color rgba(white, .3)
+		    background-image linear-gradient(top, rgb(69, 199, 235), rgb(38, 152, 219))
+		    border-bottom 1px solid #103c56
+		    box-shadow 0px 1px 0px 0px #6ad2ef
+
+.SubMenuItemsAside
+	&-Link 
+		background #fff 
+		
+		border-bottom 1px solid #efeff0
+		font-weight bolder
+		text-indent 1em 
+		display block
+		color black
+		width 100%
+		height 35px 
+		line-height 35px
+		display flex
+		justify-content center 
+		align-items center
+		transition .3s
+		&:hover 
+			background rgba(white, .3)
+.Icon
+	display block
+	height 100%
+	width 35px
+	&:before
+		content "▶"
+		color #bcbcbf
+.Valor 
+	height 100%
+	width 100%
+
+@media screen and (min-width:480px)
+	.MenuAside
+		width 320px
+	

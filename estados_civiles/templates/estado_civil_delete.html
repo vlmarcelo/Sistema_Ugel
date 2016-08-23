@@ -1,0 +1,68 @@
+{% extends 'base_menu_nav.html' %}
+{% load static from staticfiles %}
+
+{% block title %} 
+	Delete -  Estado Civil
+{% endblock %}
+
+<!-- Header -->
+
+<!-- Color de Fondo -->
+{% block color_fondo_headMenu %} 
+	Fondo-Azul
+{% endblock color_fondo_headMenu %}
+
+<!-- Head URL del Menu -->
+{% block url_menu%} 
+	
+{% endblock url_menu%}
+<!-- Head Titulo -->
+{% block titulo_menu%}
+	Menu |  Estado Civil
+{% endblock titulo_menu%}
+
+<!-- Avatar Sistema -->
+{% block avatar_sistema %} 
+	{% static 'imagenes/ico/Panel-Control-1.ico' %}
+{% endblock avatar_sistema %}
+<!-- Avatar Modulo -->
+{% block avatar_modulo %} 
+	{% static 'imagenes/ico/Login-1.ico' %}
+{% endblock avatar_modulo %}
+
+
+<!-- Section -->
+{% block section %}
+	<article class="ContainerForm">
+		<div class="Marco">
+			<h3 class="Rotulo">
+				Eliminar  Estado Civil : {{object.nombre}}?
+			</h3>
+		</div>
+		<form action="" method="post" enctype="multipart/form-data" class="Form">
+		   {% csrf_token %}
+			
+		  <div class="Box">
+		  	<input type="submit" value="Si, eliminar." class="Submit-Rojo Fondo-Verde-Oscuro" />
+		  </div>
+		  <div class="Box">
+		  	 <div class="InputContainer-Center">
+		  	 	<div class="BotonContainer Fondo-Turqueza">
+		  	 		<a href="" class="Boton">No, cancelar.</a>
+		  	 	</div>
+	  	 		<p class="Texto">
+	  	 	 		Regresar al Menu -  Estado Civil.
+	  	 		</p>
+		  	 </div>
+		  </div>
+			
+		</form>
+	</article>
+{% endblock section %}
+
+
+<!-- Footer -->
+<!-- Color de Fondo -->
+{% block color_fondo_PiePagina %}
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

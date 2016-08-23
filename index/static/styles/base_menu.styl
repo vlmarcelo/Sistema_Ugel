@@ -1,0 +1,180 @@
+amarillo_claro = #ffe788
+azul = #003F76//#225aa4
+azul_acero = #1e6381
+azul_oscuro = #273b47
+celeste = #298fb7
+celeste_claro = #23a2dc
+celeste_agua = #c2e1f5
+gris = #FAFAFA
+gris_oscuro = #333636
+naranja = #DD4F24
+transparente = rgba(255, 255, 255, 0.5)
+turqueza = #1bd6e0
+verde_agua = #cdf1e2
+verde_claro = #80BCA3
+verde_oscuro = #35656d
+verde_negro = #033333
+rojo = #ff4842
+/*
+	Mixins 
+*/
+
+header 
+	width 100%
+	z-index 5
+	.HeadMenu 
+		border-bottom 2px solid black 
+		box-shadow 1px 1px 10px solid black
+		display flex 
+		justify-content center
+		align-items center
+		height 13vh
+		.Avatar 
+			box-shadow 0 0 10px black
+			width 60px 
+			height 60px
+			border 2px solid white
+			border-radius 50%
+			margin 0 .5em
+			&-Imagen 
+				width 100%
+				height 100%
+				vertical-align top 
+				transition .3s
+				&:hover 
+					transform rotateY(360deg) 
+				
+		#Avatar-Modulo 
+			display none
+		&-Marco
+			width 70% 
+			
+				
+
+footer 
+	width 100%
+	z-index 5
+	.PiePagina 
+		height 7vh
+		width 100%
+		display flex
+		justify-content center
+		align-items center
+		border-top 2px solid black
+		#LogoTipoEntidad-Creador
+			display none
+		.LogoTipoEntidad
+			width 20%
+			display flex 
+			justify-content center 
+			align-items center
+			&-Imagen
+				vertical-align top
+				width 35px
+				height 35px 
+				transition .3s 
+				&:hover 
+					transform rotateY(360deg)
+			&-NombreEntidad
+				display none
+		.Copyright 
+			padding 0 .5em
+			border-left 2px solid white
+			width 80% 
+			display flex
+			justify-content center 
+			align-items center
+			&-Descripcion 
+				font-size .7em 
+				color red
+				margin 0 auto
+				font-weight bolder
+				text-shadow 1px 1px 10px black
+			&-Entidad 
+				margin 0 auto
+				width 70%
+				font-size .8em
+				text-align center
+				text-shadow 1px 1px 10px black
+				&-Link
+					margin 0 .3em
+					transition .3s
+					&:hover 
+						text-decoration underline
+
+@media screen and (min-width:480px)
+	header
+		.HeadMenu 
+			height 15vh //90px
+			.Avatar
+				height 70px 
+				width 70px
+			#Avatar-Modulo 
+				display block
+			
+	footer
+		.PiePagina
+			height 9vh //60px
+			#LogoTipoEntidad-Usuario 
+				.LogoTipoEntidad-Imagen 
+					margin 0 0 0 auto 
+				.LogoTipoEntidad-NombreEntidad
+					margin 0 auto 0 0
+			#LogoTipoEntidad-Creador
+				display flex
+				.LogoTipoEntidad-Imagen 
+					margin 0 auto 0 0
+				.LogoTipoEntidad-NombreEntidad
+					margin 0 0 0 auto
+					
+					
+			.LogoTipoEntidad
+				width 22%
+				&-NombreEntidad
+					display block
+					font-weight bolder
+					text-shadow 1px 1px 10px black
+					font-size .8em
+					&-Link
+						padding 0 .5em
+				&-Imagen
+					width 40px 
+					height 40px
+			.Copyright 
+				width 56%
+				border-right 2px solid white
+				&-Descripcion
+				&-Entidad
+					font-size .8em
+				&-Descripcion
+					margin 0 0 0 auto
+				&-Entidad
+					margin 0 auto 0 0
+				
+@media screen and (min-width:1000px)
+	header 
+		.HeadMenu 
+			height 17vh
+			.Avatar
+				height 90px 
+				width 90px
+			#Avatar-Modulo 
+				display block
+			
+	footer
+		.PiePagina	
+			height 13vh	
+			.Copyright
+				&-Descripcion
+				&-Entidad
+					font-size 1.3em		
+			.LogoTipoEntidad
+				&-Imagen
+					width 65px 
+					height 65px
+				&-NombreEntidad
+					font-size 1.2em
+					
+
+		
+		

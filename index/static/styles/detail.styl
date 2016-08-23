@@ -1,0 +1,200 @@
+amarillo_claro = #ffe788
+azul = #225aa4
+azul_acero = #1e6381
+azul_oscuro = #273b47
+celeste = #298fb7
+celeste_claro = #23a2dc
+celeste_agua = #c2e1f5
+gris = #FAFAFA
+gris_claro = #eff2e7
+gris_oscuro = #333636
+naranja = #DD4F24
+transparente = rgba(255, 255, 255, 0.5)
+turqueza = #1bd6e0
+verde_agua = #cdf1e2
+verde_claro = #80BCA3
+verde_oscuro = #35656d
+verde_negro = #033333
+rojo = #ff4842
+.RotuloContainer 
+	display flex 
+	justify-content center
+	align-items center
+.ContainerID 
+	
+	border-left 2px solid black 
+	border-radius .5em .5em 0 0
+	border-right 2px solid black 
+	border-top 2px solid black
+	box-shadow 0 0 6px black
+	height 35px 
+	position absolute
+	top -35px
+	width 150px 
+.ID 
+	color white
+	font-weight bolder
+	line-height 32px 
+	text-align center
+	text-shadow 1px 1px 10px black
+.DetailHead 
+	position relative
+	border-bottom 2px solid rojo
+	margin .5em 0
+	
+
+
+.ContainerImagen
+	box-shadow 0 0 10px black
+	position relative 
+	width 320px
+	height 320px
+	margin 2.5rem auto
+	border 2px solid black
+.DetailImagen
+	//animation 1s circle infinite
+	width 100%
+	height 100%
+.DetailDescripcion
+	background rgba(black, .3)
+	position absolute 
+	bottom 0
+	width 100%
+	height 35px 
+	line-height 35px 
+
+
+.ContainerAtributos
+	margin .5em auto
+	width 100% 
+.AtributosHead 
+	padding 0.5em 
+	>p 
+		font-weight bolder	
+.Atributos 
+	border 2px solid black
+	border-radius .5em
+	box-shadow 0 0 10px black
+	height 300px
+	margin .5em
+	overflow-x auto 	
+	overflow-y auto 
+	
+.AtributoItem 
+	width 100%
+.Atributo 
+	display flex 
+	flex-direction column
+	font-weight bolder
+	height 100%
+	line-height 35px 
+	margin 0 auto
+	text-shadow 1px 1px 10px black
+	
+.Etiqueta 
+	color white 
+	display block
+	font-weight bolder
+	height 35px
+	padding 0 .5em
+	text-align left 
+	width 100%
+	
+.Value
+	color  black
+	display block
+	font-weight bolder
+	height 35px 
+	padding 0 .5em
+	text-align left 
+	text-shadow 0 0 1px black
+	width 100%
+	
+.AtributoArea
+	display flex
+	flex-direction column
+	font-weight bolder
+	height 100%
+	margin 0 auto
+	text-shadow 1px 1px 10px black
+	
+.EtiquetaArea
+	color white 
+	display block
+	font-weight bolder
+	padding 0 .5em
+	text-align left 
+	width 100%
+	height 35px
+	line-height 35px
+.ValueArea
+	overflow-y auto
+	height 65px
+	color  black
+	display block
+	font-weight bolder
+	padding 0 .5em
+	text-align justify 
+	text-shadow 0 0 1px black
+	width 100%
+@keyframes circle
+	0%
+		transform scale(1)
+	100%
+		transform scale(2)
+		opacity 0
+@media screen and (min-width:480px)
+		
+	.ContainerAtributos
+		width 70%
+	.Atributo
+		line-height 40px
+	.Etiqueta 
+		height 40px
+	.Value 
+		height 40px
+
+@media screen and (min-width:1000px)
+	.DetailBody 
+		display flex 
+		justify-content center
+		align-items center 
+	
+	.ContainerImagen
+		width 340px 
+		height 320px
+		margin 2.5em 5em 
+	.ContainerAtributos
+		width 60% 
+		
+	.Atributos 
+		height 300px
+	.Atributo 
+	.AtributoArea 
+		flex-direction row
+		border-bottom 1px solid white
+	.Atributo
+		
+		line-height 45px
+		
+	.Etiqueta 
+
+		height 45px
+		width 45%
+	.Value 
+
+		width 55%
+		height 45px
+		text-align right
+	.RotuloContainer 
+		width 100%
+		margin 0 auto
+	.EtiquetaArea 
+		width 45%
+		height 80px
+	.ValueArea
+		line-height 45px
+		width 55%
+		height 80px
+		
+			

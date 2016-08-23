@@ -1,0 +1,107 @@
+{% extends "base_menu.html" %}
+{% load static from staticfiles %}
+<!-- Color del Head -->
+{% block color_fondo_headMenu %}Fondo-Gradiente-Blanco-Gris-Oscuro {% endblock color_fondo_headMenu %}
+
+{% block title %} Unidad de Gestión Educativa Local {% endblock title %}
+{% block titulo_menu%}
+	Unidad de Gestión Educativa Local
+{% endblock titulo_menu%}
+
+{% block avatar_sistema %}
+	{% static "imagenes/png/Gorra-1.png" %}
+{% endblock avatar_sistema %}
+
+{% block avatar_modulo %}
+	{% static "imagenes/png/Profesor-1.png" %}
+{% endblock avatar_modulo %}
+
+{% block section %}
+	<div class="Article-Main">
+		<article class="SliderContainer">
+			<figure class="Slider">
+				<img src="{% static "imagenes/png/Dia-2.png" %}" alt=""/ class="Slider-Imagen">
+				<figcaption class="Slider-Descripcion">
+					<a href="" class="Slider-Descripcion-Link">
+						Próximo Evaluación - Docentes del Perú
+					</a>
+				</figcaption>
+			</figure>
+			<div class="Convocatoria">
+				<h2 class="SubTitulo">
+					Descripción:
+				</h2>
+				<p class="Texto">
+					La Unidad de Gestión Educativa Local Nº 03, al año 2014 tiene como visión constituirse en una organización líder en la gestión de servicios educativos, altamente competitiva que mediante los principios de transparencia y equidad ha logrado elevar los niveles de calidad de enseñanza-aprendizaje en las Instituciones y Programas Educativas de su jurisdicción, sustentado en la solidaridad, el respeto a los derechos humanos y en la autonomía pedagógica, institucional y administrativa, orientadas a formar alumnos con pensamiento Crítico-Analítico, con capacidades y habilidades que les permitan desarrollarse exitosamente, capaces de construir en democracia su propio proyecto personal de vida, dentro del marco de ética y práctica de valores.
+				</p>
+				<a href="http://localhost:8000/admin/login/?next=/admin/">
+					Entrar Panel de Administrador
+				</a>
+			</div>
+		</article>
+		<article class="Login">
+			<div class="FormContainer">
+				<form action="" class="FormLogin" method="POST">
+					{% csrf_token %}
+					<div class="Box">
+						<div class="">
+							<p class="Parrafo">
+								Login | Sign Up 
+							</p>
+							<div class="Marco">
+								<p class="Rayado">
+									
+								</p>
+								<p class="Rayado-Sub">
+									
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="InputContainer">
+						<div class="LabelContainer">
+							<label for="{{ form.username.auto_id }}" class="Label">
+							{{form.username.label}} <!-- label_tag | Completo -->
+							</label>
+						</div>
+						<div class="InputComponent">
+							{{form.username}}
+							{{form.username.errors}}
+						</div>
+					</div>
+					<div class="InputContainer">
+						<div class="LabelContainer">
+							<label for="{{ form.password.auto_id }}" class="Label">
+							{{form.password.label}} <!-- label_tag | Completo -->
+							</label>
+						</div>
+						<div class="InputComponent">
+							{{form.password}}
+							{{form.password.errors}}
+						</div>
+					</div>
+					
+					<div class="Box">
+						<input type="submit" class="Submit Background-Celeste">
+					</div>
+					<div class="Box">
+						<a href="{% url 'usuario:create' %}" class="RegistrateLink"> Registrate </a>
+					</div>
+					<div class="MensajeError">
+						<p class="TextError">
+							{% if form.non_field_errors %}
+								  {% for err in form.non_field_errors %}
+								 	 {{ err }}
+								  {% endfor %}
+							{% endif %}
+						</p>
+					</div>
+				</form>
+			</div>
+		</article>
+	</div>
+{% endblock section %}
+
+{% block color_fondo_PiePagina %}
+	Fondo-Negro-Transparente
+{% endblock color_fondo_PiePagina %}

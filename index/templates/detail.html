@@ -1,0 +1,61 @@
+{% extends 'base_menu_nav.html' %}
+
+{% block section %}
+	<!-- Detail -->	
+	<article class="Detail">
+		<!-- Titulo del Detalle -->
+		<div class="RotuloContainer Border-Bottom-Rojo">
+			<h3 class="Rotulo">
+				{% block rotulo_detail %}
+				{% endblock rotulo_detail %}
+			</h3>
+		</div>
+		
+		<!-- Botones de Acciones -->
+		<div class="Action">
+			
+		</div>
+
+		<!-- Lista de Atributos -->
+		<div class="DetailBody">
+				<!-- Imagen -->
+				
+				<figure class="ContainerImagen">
+					<!-- ID -->
+					<div class="ContainerID Fondo-Azul-Transparente">
+						<p class="ID">
+							<!-- Valor del Id del Objeto -->
+							{% block id %}
+							{% endblock id%}
+						</p>
+					</div>
+					<!-- Imagen | Colocar el tag completo del img en la herencia -> class="DetailImagen"-->
+					{% block imagen_detail %}
+					{% endblock imagen_detail %}
+
+					<!-- Descripcion de Imagen -->
+					<figcaption class="DetailDescripcion">
+						<!-- Nombre del Objeto -->
+						<h4 class="H4">
+							<!-- URL de Update -->
+							<a href="{% block url_update %} {% endblock url_update %}" class="Rotulo-Link">
+								{% block imagen_descripcion_detail %}
+								{% endblock imagen_descripcion_detail%}
+								<span class="icon-pen Font-Size-P">
+									
+								</span>
+							</a>
+						</h4>
+					</figcaption>
+				</figure>
+				
+				
+				<!-- Atributos del Objeto -->
+				<div class="ContainerAtributos">
+					{% block atributos %}
+					{% endblock atributos%}
+				</div>
+		</div>
+		
+		</article>
+{% endblock section %}

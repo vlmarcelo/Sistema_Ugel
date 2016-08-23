@@ -1,0 +1,64 @@
+{% extends 'base_menu.html' %}
+{% load static from staticfiles %}
+<!-- Menu de Navegacion -->
+{% block nav %}
+		<!-- Usuario -->
+		<div class="Usuario">
+			<div class="Open">
+				<div>
+					<a href="" class="icon-grid">  </a>
+				</div>
+			</div>
+			<!-- Usuario - Avatar -->
+			<figure class="Usuario-Avatar">
+				<!-- Usuario - Avatar - Imagen -->
+				<a href="{% url 'usuario:detail' id_usuario %}" class="Usuario-Avatar-Link">
+					<img src="{{avatar.url}}" alt="{{username}}" class="Usuario-Avatar-Link-Imagen"/>
+				</a>
+				<!-- Usuario - Avatar - Nombre -->
+				<figcaption  class="Usuario-Avatar-Nombre">
+					<a href="{% url 'usuario:detail' id_usuario %}" class="Usuario-Avatar-Nombre-Link">
+						{{username}}
+					</a>
+				</figcaption>
+				<!-- Boton de Configuracion -->
+				<div class="BotonConfiguracion">
+					<a href="{%url 'usuario:logout'%}" class="BotonConfiguracion-Link">
+						Salir
+					</a>
+				</div>
+			</figure>
+			<!-- Panel de Configuracion -->
+			<div class="Usuario-Panel">
+				<!-- Items del Panel -->
+				<ul class="Configuracion">
+					<!-- Perfil de Usuario -->
+					<li class="Configuracion-Item">
+						<a href="#" class="Configuracion-Item-Link">
+							<!-- Icono -->
+							<span class="icon-user Icono">
+								
+							</span>
+							<!-- Descripcion -->
+							<span class="Descripcion">
+								Perfil de Usuario
+							</span>
+						</a>
+					</li>
+					<!-- Salir del Sistema -->
+					<li class="Configuracion-Item">
+						<a href="{% url 'usuario:logout' %}" class="Configuracion-Item-Link">
+							<!-- Icono -->
+							<span class="icon-sign-out2 Icono">
+								
+							</span>
+							<!-- Descripcion -->
+							<span class="Descripcion">
+								Salir
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+{% endblock nav %}

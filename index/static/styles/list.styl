@@ -1,0 +1,207 @@
+gris_claro = #666
+azul = #225aa4
+celeste_claro = #1573A3
+celeste_oscuro = #2288bb
+
+
+.List 
+	width 100%
+	height 100%
+.Actions 
+	margin 1em 
+	display flex 
+	justify-content space-between
+	align-items center
+.AddNew
+	font-size 1rem 
+	text-align center 
+	display block 
+	height 35px 
+	line-height 32px
+	margin 0 0 0 .5em	
+	transition .3s
+	cursor auto
+	font-weight bolder
+	&:hover 
+		text-decoration underline
+.Add 
+	&-Link 
+		display flex 
+		justify-content center 
+		align-items center
+		
+.AddNew
+	display none 
+.AddIcono 
+	margin 0 .5em
+	box-shadow 0 0 10px black
+	font-size .9em 
+	color rojo
+	display block 
+	width 35px 
+	height 35px
+	line-height 32px
+	border-radius 50% 
+	border 2px solid black
+	text-align center
+	
+.Input-Buscador
+	margin 0
+.Buscador 
+	width 50%
+	&-Form
+		width 100%
+		display flex 
+		justify-content space-between 
+		align-items center
+
+.Icono 
+	margin 0 
+	width 32px 
+	height 32px 
+	border-right 1px solid gris_claro
+	&-Label 
+		line-height 32px
+		text-align center 
+		display block 
+		width 100%
+		height 100%
+		font-size 1.1em
+				
+.TablaContainer 
+	flex-direction column
+	display flex 
+	justify-content center 
+	align-items center
+	width 100%
+.Tabla 
+	
+	box-shadow 0 0 10px black
+	display block
+	width 95%
+	overflow-x auto 
+	overflow-y auto
+	height 350px
+
+.TBody 
+	width 100%
+.TRow 
+	width 100%
+	display table-row
+	border-bottom 1px solid #eee
+.THead
+	display table-cell
+	height 35px 
+	width 100%
+	&-Link
+		padding 0 .5em
+		white-space nowrap
+		//white-space nowrap
+		color white
+		cursor auto 
+		display block 
+		font-size 1em
+		font-weight bolder
+		height 100%
+		line-height 32px
+		text-align left
+		text-shadow 1px 1px 10px black 
+		text-transform uppercase
+		width 100%
+		
+.TData
+	width 100% 
+	height 35px 
+	vertical-align top
+	font-size 1em
+	text-align left
+	padding 0 .5em
+	display table-cell
+	white-space nowrap
+	&-Link
+		width 100%
+		height 100%
+		display block
+		color azul
+		transition .3s
+		&:hover 
+			text-decoration underline
+
+.Paginacion 
+	display flex 
+	justify-content center
+	align-items center 
+	flex-direction column
+	margin-top .5em
+.Paginas 
+	display flex 
+	justify-content center 
+	align-items center 
+	height 60px
+.Total 
+	display block
+	font-weight bolder
+.TotalValor
+	color red
+.BotonPagina
+	box-shadow 0 0 10px black
+	height 35px 
+	width 35px 
+	border-radius 50%
+	border 2px solid black
+	overflow hidden
+	transition .3s
+	
+	&-Disable
+	&-Link 
+		text-align center
+		display block 
+		width 100%
+		height 100% 
+		line-height 32px 
+	&-Disable
+		font-weight bolder
+	
+.RangoPagina
+	margin 0 .25em
+	display flex 
+	justify-content center 
+	align-items center 
+.Pagina 
+	width 35px 
+	height 35px
+	&-Enable 
+	&-Disable 
+	&-Varios
+		border 1px solid transparent
+		display block
+		width 100%
+		height 100%
+		line-height 32px 
+		text-align center
+		color black
+		font-weight bolder
+	&-Enable
+		text-shadow 1px 1px 10px black
+		color white
+	&-Disable
+		transition .3s
+		
+		//Este efecto usarlo con Javascript
+		&:hover 
+			text-shadow 1px 1px 10px black
+			color white
+			background celeste_oscuro
+			border 1px solid celeste_claro
+
+@media screen and (min-width:480px)
+	.Paginacion 
+		justify-content space-between 
+		flex-direction row
+		margin 0 2em
+	.Total 
+		display block
+		
+	.AddNew 
+		display block
+		color black
